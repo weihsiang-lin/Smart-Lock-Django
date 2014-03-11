@@ -1,3 +1,41 @@
-<h2>Welcome to Acer Smart Lock Demo System</h2>
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <div name="templates_wall" class="wall" >
+      
+    <h2 class="underline color_acer"> Smart Lock Monitor System </h2>
+     
+      <div name="bricks" class="ui grid">
+          
+          <div class="four wide column" ng-repeat=' brick in wall.bricks'>
+                <a href="/demo/users"><h4 class="ui top attached header"> <i class="large user icon"></i>
+                  <div class="content"> User Menagement</div>
+                </h4>
+		</a>
+                <div class="ui segment attached">
+                  this is user management .....:)
+                  <br>
+                </div>
+                <h4 class="ui bottom attached header"> </h4>
+          </div>
+          <div class="four wide column" ng-repeat=' brick in wall.bricks'>
+                <a href="/demo/logs"><h4 class="ui top attached header"> <i class="large book icon"></i>
+                  <div class="content"> Check Entrance Log</div>
+                </h4>
+                </a>
+                <div class="ui segment attached">
+                  this is log .....:)
+                  <br>
+                </div>
+                <h4 class="ui bottom attached header"> </h4>
+          </div>
+
+      </div>
+      
+  </div>  
+<!--
 <a href="/demo/users">User Management</a><br />
 <a href="/demo/logs">Check Entrance Log</a>
+-->
+{% endblock %}

@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
 <h2>Create User</h2>
 <form method="POST" action="/demo/users/create/">
     {% csrf_token %}
@@ -8,3 +12,4 @@
     <input type="submit" value="Create" />
     <input type="button" value="Cancel" onclick="location.href='/demo/users'" />
 </form>
+{% endblock %}

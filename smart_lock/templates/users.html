@@ -1,26 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
 <h2>User Management</h2>
-<table>
-    <tr>
-        <td>Name</td>
-        <td>IMEI</td>
-        <td>Enabled</td>
-        <td>Actions</td>
-    </tr>
-    {% for user in users %}
-    <tr>
-        <td>{{ user.name }}</td>
-        <td>{{ user.imei }}</td>
-        <td>{{ user.auth }}</td>
-        <td>
+<div class="ui segment">
+  <div class="ui menu">
+        <div class="item">
+             <a href="/demo/users/create"  class="ui button"><i class="add icon"></i>Add User</a>
+        </div>
+  </div>
+        <table class="ui table segment">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>IMEI</th>
+            <th>Enabled</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+         {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.imei }}</td>
+            <td>{{ user.auth }}</td>
+            <td>
             {% if user.auth %}
-            <input type="button" value="Disable" onclick="location.href='/demo/users/disable/{{ user.id }}'" />
+            <div class="ui small  button" onclick="location.href='/demo/users/disable/{{ user.id }}'">Disable</div>
             {% else %}
-            <input type="button" value="Enable" onclick="location.href='/demo/users/enable/{{ user.id }}'" />
+            <div class="ui small  button"  onclick="location.href='/demo/users/enable/{{ user.id }}'" >Enable</div>
             {% endif %}
-            <input type="button" value="Delete" onclick="location.href='/demo/users/delete/{{ user.id }}'" />
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+            <div class="ui small  button"  onclick="location.href='/demo/users/delete/{{ user.id }}'" />Delete</div>
+       	     </td>
+         </tr>
+   	 {% endfor %}
+        </tbody>
+	</table>
+   
+</div>
+<!--
 <a href="/demo/users/create">Create</a><br />
 <a href="/demo">Return to Index</a>
+-->
+{% endblock %}
+
+

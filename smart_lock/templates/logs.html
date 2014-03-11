@@ -1,11 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
 <h2>Entrance Log</h2>
 {% if logs %}
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Time</td>
+    <table class="ui table segment">
+        <thead>
+         <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Time</th>
         </tr>
+        </thead>
+        <tbody>
         {% for log in logs %}
         <tr>
             <td>{{ log.id }}</td>
@@ -13,9 +18,20 @@
             <td>{{ log.time }}</td>
         </tr>
         {% endfor %}
+        </tbody>
     </table>
 {% else %}
-    <p>No logs are available.</p>
+<div class="ui icon message">
+      <i class="help icon"></i>
+      <div class="content">
+        <div class="header">
+          No Logs are available.
+        </div>
+        <p></p>
+      </div>
+    </div>
+
+
 {% endif %}
 <div class="pagination">
     <span class="step-links">
@@ -32,4 +48,7 @@
         {% endif %}
     </span>
 </div>
-<a href="/demo">Return to Index</a>
+<!--
+<a href="/demo">Return to Index</a>-->
+
+{% endblock %}

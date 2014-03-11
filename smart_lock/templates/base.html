@@ -1,0 +1,51 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html ng-app="acerApp">
+  <head>
+        <meta charset="utf-8">
+        <title>Acer Smart Lock Demo System</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cs.css">
+ 
+        <!-- outsourcing -->
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-scrolltofixed-min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}jsjquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/cs.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/semantic.min.js"></script>
+        
+    
+        <script> 
+          $(document).ready(function(e) {
+            JS_Init();
+          });
+        </script>
+   
+    </head>
+<body>
+  <div id="wrapper">
+    <header>
+      <a href="/demo" class="header_logo" title="ACER CloudStone"></a>
+    </header>
+  
+    <div id="lightbox_shadow"></div>
+    <!-- sidebar end -->
+    <div class="container">
+  
+      
+      {% block content %}
+      {% endblock %}
+
+    </div>
+    <div class="footer_height"> </div>
+    <footer>
+      <div class="footer_copyright">Acer CloudStone <strong>Version 2.0.13</strong>. 2014 Copyright&copy;, all right reserved.</div>
+      <div class="footer_logo">&nbsp;</div>
+    </footer>
+  </div>     
+
+     
+    </body>
+</html>
